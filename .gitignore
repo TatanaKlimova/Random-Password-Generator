@@ -1,0 +1,74 @@
+# Файлы истории паролей (содержат сгенерированные пароли)
+password_history.json
+password_export_*.json
+*_history.json
+
+# Файлы Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Виртуальное окружение
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Файлы IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Логи и временные файлы
+*.log
+*.tmp
+*.temp
+
+# Файлы конфигурации с敏感ными данными
+config.ini
+.secrets
+
+# Упакованные файлы
+*.zip
+*.tar.gz
+*.rar
+
+# Файлы отчетов
+*.pdf
+*.xlsx
+
+
+# Создать файл .gitignore
+cat > .gitignore << 'EOF'
+# Игнорируем файлы с паролями
+password_history.json
+password_export_*.json
+
+# Игнорируем кэш Python
+__pycache__/
+*.pyc
+
+# Игнорируем виртуальное окружение
+venv/
+env/
+
+# Игнорируем файлы IDE
+.vscode/
+.idea/
+.DS_Store
+EOF
+
+# Добавить .gitignore в Git
+git add .gitignore
+
+# Сделать коммит
+git commit -m "Add .gitignore"
+
+# Если файл истории уже был добавлен, удалите его из отслеживания
+git rm --cached password_history.json
